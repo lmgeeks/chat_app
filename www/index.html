@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Luis Marin">
+        <meta name="description" content="hichat | a simple chat application built with node.js and websocket">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MyMessage</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="jumbotron">
+                <div class="wrapper col-md-6" style="margin: 0 auto">
+                        <div class="banner">
+                            <h1><img src="img/logo.png" alt="MyMessage" width="40%"></h1>
+                            <span id="status"></span>
+                        </div>
+                        <div id="historyMsg">
+                        </div>
+                        <div class="controls" >
+                            <div class="items">
+                                <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+                                <!-- <input id="emoji" type="button" value="emoji" title="emoji" /> -->
+                                <i class="far fa-smile" id="emoji"></i>
+                                <label for="sendImage" class="imageLable">
+                                    <input type="button" value="imagen"  />
+                                    <input id="sendImage" type="file" value="image"/>
+                                </label>
+                                <input id="clearBtn" type="button" value="clean" title="clear screen" />
+                            </div>
+                            <div class="form-group">
+                                <textarea id="messageInput" class="form-control" placeHolder="Escribe tu mensaje"></textarea>
+                                <input id="sendBtn" type="button" class="btn btn-success" value="Enviar">
+                            </div>
+                            <div id="emojiWrapper">
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <div id="loginWrapper" class="form-inline">
+            <p id="info">Conectando al servidor...</p>
+            <div id="nickWrapper">
+                <img src="img/logo2.png" alt="MyMessage" width="35%"><br><br>
+                <input type="text" class="form-control" placeHolder="nickname" id="nicknameInput" />
+                <input type="button" class="btn btn-success" value="Entrar" id="loginBtn" />
+            </div>
+        </div>
+        <footer>
+			<small>Created By Luis Marin</small>
+            <!--<small>view on <a href="https://github.com/Wayou/HiChat">GitHub</a> | <a href="mailto:liuwayong@gmail.com">contact me</a></small>-->
+        </footer>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="scripts/hichat.js"></script>
+        <script src="webpush.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+        /**REMOVE ME IF YOU CANT ACCESS GOOGLE SERVICE**/
+          /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+          ga('create', 'UA-46794744-7', 'hichat.herokuapp.com');
+          ga('send', 'pageview');
+        /**REMOVE END**/
+    </script>
+    </body>
+</html>
